@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
 
-        <title>Pascal Triangle</title>
+<head>
+    <meta charset="utf-8">
+
+    <title>Pascal Triangle</title>
 
 
-        <style>
-        </style>
+    <style>
+        .dot {
+            height: 25px;
+            width: 25px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
 
-        <style>
-           
-        </style>
-    </head>
-    <body>
+    <style>
 
-        @foreach($numbers as $num)
-        {!!  $num !!}
-        
-        @endforeach
-        
-    </body>
+    </style>
+</head>
+
+<body>
+    @foreach ($numbers as $num)
+    
+        @if (is_numeric($num))
+            <span class="dot">{!! $num !!}</span>
+        @else
+            {!! $num !!}
+        @endif
+    @endforeach
+
+</body>
+
 </html>
